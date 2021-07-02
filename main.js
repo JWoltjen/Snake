@@ -87,6 +87,28 @@ function controls() {
     }
 }
 
+function spawn() {
+    const {
+        wait, 
+        add, 
+        pos,
+        rect,
+        color, 
+        origin
+    } = k
+    return {
+        spawn() {
+            wait(1, () => {
+                add([
+                    pos(128, 128), 
+                    rect(16, 16), 
+                    color(0, 0, 1, 1), 
+                    origin('center')
+                ])
+            })
+        }
+    }
+}
 
 function Snake() {
     const {
@@ -97,6 +119,10 @@ function Snake() {
         origin
     } = k
 
+   const spawner = add([
+        spawn()
+    ])
+
     add([
         pos(8, 8), 
         rect(16, 16),
@@ -105,6 +131,8 @@ function Snake() {
         movement(), 
         controls()
     ])
+
+    spawner.spawn(); 
 }
 
 k.scene('snake', Snake)
