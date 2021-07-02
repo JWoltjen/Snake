@@ -17,7 +17,6 @@
   },
   "homepage": "https://github.com/JWoltjen/codesinoneday#readme",
   "dependencies": {
-    "kaboom": "^0.5.1",
-    "parcel": "^2.0.0-beta.2"
+    "kaboom": "^0.5.1"
   }
 }
