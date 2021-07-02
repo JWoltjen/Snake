@@ -86,6 +86,21 @@ function controls() {
         }
     }
 }
+function getRandomPos(tileW = 16, tileH = 16) {
+    const {
+        vec2, 
+        width,
+        height, 
+        rand,
+    } = k
+    const tx = Math.floor(width() / tileW)
+    const ty = Math.floor(height() / tileH)
+
+    const x = (Math.floor(rand(0, tx)) * tileW) + (tileW * 0.5) 
+    const y = (Math.floor(rand(0, ty)) * tileH) + (tileH * 0.5) 
+
+    return vec2(x, y)
+}
 
 function spawn() {
     const {
@@ -100,7 +115,7 @@ function spawn() {
         spawn() {
             wait(1, () => {
                 add([
-                    pos(128, 128), 
+                    pos(getRandomPos()), 
                     rect(16, 16), 
                     color(0, 0, 1, 1), 
                     origin('center')
