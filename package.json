@@ -1,0 +1,23 @@
+{
+  "name": "snake",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JWoltjen/codesinoneday.git"
+  },
+  "author": "jeff w",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JWoltjen/codesinoneday/issues"
+  },
+  "homepage": "https://github.com/JWoltjen/codesinoneday#readme",
+  "dependencies": {
+    "kaboom": "^0.5.1",
+    "parcel": "^2.0.0-beta.2"
+  }
+}
