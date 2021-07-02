@@ -118,7 +118,8 @@ function spawn() {
                     pos(getRandomPos()), 
                     rect(16, 16), 
                     color(0, 0, 1, 1), 
-                    origin('center')
+                    origin('center'), 
+                    'food'
                 ])
             })
         }
@@ -131,7 +132,9 @@ function Snake() {
         pos,
         rect,
         color,
-        origin
+        origin, 
+        overlaps,
+        destroy
     } = k
 
    const spawner = add([
@@ -144,12 +147,16 @@ function Snake() {
         color(0, 1, 0),
         origin('center'),
         movement(), 
-        controls()
+        controls(), 
+        'head'
     ])
 
     spawner.spawn(); 
-}
 
+    overlaps('head', 'food', (head, food) => {
+        destroy(food)
+    })
+}
 k.scene('snake', Snake)
 
 k.start('snake')
