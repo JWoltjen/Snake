@@ -6,9 +6,23 @@ const k = kaboom({
     scale: 2, 
     clearColor: [0, 0, 0, 1]
 })
+function Snake() {
+    const {
+        add, 
+        pos,
+        rect,
+        color,
+        origin
+    } = k
 
-k.scene('test', () => {
-    console.log('test scene loaded')
-})
+    add([
+        pos(8, 8), 
+        rect(16, 16),
+        color(0, 1, 0),
+        origin('center')
+    ])
+}
 
-k.start('test')
+k.scene('snake', Snake)
+
+k.start('snake')
