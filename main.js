@@ -9,16 +9,24 @@ const k = kaboom({
 
 function movement(){
     const {
-        vec2
+        vec2, 
+        dt
     } = k
     const direction = vec2(0, 0)
-    const speed = 1
+    const speed = 16
+    let accumulatedTime = 0
 
     return {
         add() {
             this.movement.right(); 
         },
         update(){
+            accumulatedTime+=dt()
+            if(accumulatedTime < 0.15){
+                return
+            }
+            accumulatedTime = 0
+
             if(!this.pos)
             {
                 console.error('missing pos component')
